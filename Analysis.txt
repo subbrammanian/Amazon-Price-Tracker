@@ -1,0 +1,1 @@
+<span class="a-size-medium a-color-price offer-price a-text-normal">$11.99</span><span id="priceblock_ourprice" class="a-size-medium a-color-price">$36.69</span>//*[@id="priceblock_ourprice"]Conditions for URL:1) https://amazon.com/*2) NOT https://amazon.com/s/    f.write(line)

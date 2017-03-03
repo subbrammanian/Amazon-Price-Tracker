@@ -1,0 +1,42 @@
+<HTML>
+	<HEAD>
+		<TITLE>
+			Amazon price tracker
+		</TITLE>
+
+		<script src = "../static/js/jquery-3.1.1.min.js"></script>
+		<script src = "../static/js/submit.js"></script>
+	<HEAD>
+	<BODY>
+		<div class = "body">
+			<div class = "welcome">
+				Welcome to Amazon Price Tracking App
+			</div>
+
+			<div class = "form">
+				<form action = "/" method = "post">
+					<label for ="inputEmail">Email ID</label>
+					<input type = "email" name = "inputEmail" id="email" placeholder="example@domain.com" required>
+					<p id="email_error" style="display:none;"></p>
+					<br/>
+					<label for ="inputLink">Product URL</label>
+					<input type = "url" name = "inputLink" id="url" placeholder = "https://amazon.com/Product-Name/......." required>
+					<p id="url_error" style="display:none;"></p>
+
+					<button id = "btnSubmit" type="button">Submit</button>
+				</form>
+			</div>
+		<p id="disp"> </p>
+		<footer class="footer">
+			<p>&copy; Subbrammanian Nochur Ganeswaran</p>
+		</footer>
+
+
+		</div>
+
+
+
+
+	</BODY>
+</HTML>
+
