@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+	<br>
+	<div class = "general-content">Start saving money already!</div><br><br>
+	<div class = "general-content-medium"> Enter your details<br><br></div>
+	<div class = "general-content-small">
+	Returning member? We'll log you in<br>
+	New member? We'll sign you up</div>
+	<div class="login"><form action="" method="post" name="login">
+	
+   	{{form.hidden_tag()}}
+	{% for message in form.username.errors %}
+	<div class="login-error-message">{{ message }}</div>
+	{% endfor %}
+	{{form.username(size=80,name_="u",placeholder="Email")}}
+	{% for message in form.password.errors %}
+	<div class="login-error-message">{{ message }}</div>
+	{% endfor %}
+	{{form.password(size=80,name_="p",placeholder="Password")}}
+	
+<br>
+<input type="submit" class="btn btn-primary btn-block btn-large" value="Let me in">
+
+    </form>
+</div>
+
+
+
+{% endblock %}

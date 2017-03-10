@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+   <div class="login">
+	<h3>Login/SignUp</h3>
+    <form action="" method="post" name="login">
+    	{{ form.hidden_tag() }}
+
+    	{{form.password(size=80,name_="p",placeholder="Password", required="required")}}
+    	<button type="submit" class="btn btn-primary btn-block btn-large">Login/SignUp</button>
+    </form>
+</div>
+  
+    <script src="../static/js/index.js"></script>
+
+{% endblock %}
+  
