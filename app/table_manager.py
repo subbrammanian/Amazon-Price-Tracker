@@ -44,6 +44,7 @@ def add_user(p_email, p_pass):
 
 
 def check_user(p_email, p_pass):
+    create_tables()
     conn = create_connection()
     c = conn.cursor()
     try:
@@ -58,20 +59,35 @@ def check_user(p_email, p_pass):
         elif var_pass and var_pass != p_pass:
             return 11
         else:
-            add_user(p_email,p_pass)
+            r = add_user(p_email, p_pass)
+            if r == 1:
+                conn.commit()
+                return 12
+            else:
+                return -1
+
     except Exception as e:
         print(e)
         return -1
     finally:
-    	conn.close()
+        conn.close()
 
 
 # print add_user("Test3@asds","Pass3")
-#check_user("Test1@asds", "Pass1")
+# check_user("Test1@asds", "Pass1")
 
-#print create_tables()
+# print create_tables()
 # conn = create_connection()
 # c = conn.cursor()
 # c.execute("drop table USERS")
 # for v in c:
 # 	print v[0],v[1]
+
+if __name__ == "__main__":
+    print "Entered main"
+    conn = create_connection()
+    c = conn.cursor()
+    add_user("testemail@mac.com", "testpassword1")
+    c.execute("select * from USERS")
+    for v in c:
+        print v

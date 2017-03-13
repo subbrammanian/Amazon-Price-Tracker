@@ -2,7 +2,33 @@
 {% block content %}
 
 <div class="user-detail"><b>Logged in as:</b><i> {{username}}</i>&nbsp;&nbsp;<a href='/logout'>(Logout)</a>&nbsp;</div>
-  
+<br><br><br><br><br>
+<div class = "general-content">New Subscription</div>
+<div class = "login">
+<form action="" method="post" name="productdetail">
+	
+   	{{form.hidden_tag()}}
+	{% for message in form.product.errors %}
+	<div class="login-error-message">{{ message }}</div>
+	{% endfor %}
+	{{form.product(size=200,name_="prod",placeholder="Product Link")}}
+	<br>
+<input type="submit" class="btn btn-primary btn-block btn-large" value="Subscribe">
+
+</form>
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+<div class = 'general-content-medium'>
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+</div>
+
+
     <script src="../static/js/index.js"></script>
 
 {% endblock %}
